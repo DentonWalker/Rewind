@@ -56,19 +56,47 @@
             <div class="row row-cols-1 row-cols-lg-2">
                 <div class="col-lg-8">
                     <pre class="line-numbers"><code class="language-javascript">
-                        //call Hello World
-                        function HelloWorld(){
-                            alert("Hellow World");
-                        }                 
+                        // get the string from the page
+//Controller Function
+function getValue() {
+  document.getElementById("alert").classList.add("invisible");
+  let userString = document.getElementById("userString").value;
+  let revString = reverseString(userString);
+  displayString(revString);
+}
+//Reverse the string
+//Logic Function
+function reverseString(userString) {
+  let revString = [];
+  // reverse a string using a for loop
+  for (let index = userString.length - 1; index >= 0; index--) {
+    revString += userString[index];
+  }
+  return revString;
+}
+//Display the reversed string to the user
+//View Function
+function displayString(revString) {document.getElementById("msg").innerHTML = `Your string reversed is: ${revString}`;
+
+  //show alert box
+  document.getElementById("alert").classList.remove("invisible");
+}
+
+                 
 
                     </code>
                     </pre>
 
                 </div>
                 <div class="col-lg-4">
-                    <p>The Code is structured in one function.</p>
-                    <h5>Hello World</h5>
-                    <p>Hello World is a function that displays an alert with a message of "Hello World"</p>
+                    <p>The Code is structured in three functions.</p>
+                    <h5>getValue</h5>
+                    <p>getValue is a function that gets the string from the users input</p>
+                    <h5>reverseString</h5>
+                    <p>reverseString is a function that creates an array with the string and uses a for loop to reverse
+                        the orders of the characters</p>
+                    <h5>displayString</h5>
+                    <p>displayString displays the reversed string to the used in an alert box</p>
 
                 </div>
             </div>
